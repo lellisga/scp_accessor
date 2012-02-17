@@ -23,14 +23,14 @@ module ScpAccessor
         if value["active"] == true
           files = get_specific_value_from_a_particular_key(key,"file")
           @output.puts "#{files.join(', ')} from the #{value["server"]} server to the #{value["out_dir"]} path"
-          download_files(files,value["server"], value["user"], value["password"], value["out_dir"])
+          download_files(files,value)
         end
       }
     end
 
-    def download_files(files, server, user, password, localPath)
+    def download_files(files, params)
       files.each do |file|
-        Net::SCP.download!(server, user, file, localPath, :password => password)
+        Net::SCP.download!(params["server"], params["user"], file, params["out_dir"], :password => params["password"])
       end
     end
     
