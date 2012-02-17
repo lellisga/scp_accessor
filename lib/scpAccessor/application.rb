@@ -23,7 +23,7 @@ module ScpAccessor
         if value["active"] == true
           files = get_specific_value_from_a_particular_key(key,"file")
           @output.puts "#{files.join(', ')} from the #{value["server"]} server to the #{value["out_dir"]} path"
-          #download_files(files,value["server"], value["user"], value["password"], value["out_dir"])
+          download_files(files,value["server"], value["user"], value["password"], value["out_dir"])
         end
       }
     end
