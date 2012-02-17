@@ -1,4 +1,6 @@
-Server_1:
+# This is of test and example usage.
+# This file has no errors.
+Test:
   active: true
   server: localhost
   user: user
@@ -7,3 +9,4 @@ Server_1:
   file_2: ~/file2.xml
   file_3: ~/file3.xml
   out_dir: ~/out/
+ 

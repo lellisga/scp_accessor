@@ -1,4 +1,6 @@
-Server_1:
+# With error: Missing key out_dir
+
+Test2:
   active: true
   server: localhost
   user: user
@@ -6,4 +8,4 @@ Server_1:
   file_1: ~/file.xml
   file_2: ~/file2.xml
   file_3: ~/file3.xml
-  out_dir: ~/out/
+  
