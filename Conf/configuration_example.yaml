@@ -2,6 +2,16 @@
 # This file has no errors.
 Test:
   active: true
+  password: 12345
+  server: localhost
+  user: user
+  port: 22
+  file_1: ~/file.xml
+  out_dir: ~/out/
+ 
+Test2:
+  active: true
+  password: 12345
   server: localhost
   user: user
   port: 22
@@ -9,4 +19,3 @@ Test:
   file_2: ~/file2.xml
   file_3: ~/file3.xml
   out_dir: ~/out/
- 

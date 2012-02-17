@@ -7,7 +7,6 @@ module ScpAccessor
     let(:application){Application.new(output,"#{File.dirname(__FILE__)}/../../Conf/configuration_example.yaml")}
     
     context "Loading the YAML file" do
-
       describe "#read_configuration_file" do
         it "should read the YALM file without no problems" do
           output.should_not_receive(:puts).with(/SpcAccessor wasn't able to find the file/)
@@ -42,9 +41,18 @@ module ScpAccessor
           output.should_receive(:puts).with('Welcome to SCP Accessor!')
           application.start
         end
+        
+        describe "#print_and_download_configuration_file" do
+          it "should print the list of the files to be downloaded" do
+            application.stub(:download_files).and_return(nil)
+            output.should_receive(:puts).with(/These are the files that will be downloaded/)
+            output.should_receive(:puts).with("~/file.xml from the localhost server to the ~/out/ path")
+            output.should_receive(:puts).with("~/file.xml, ~/file2.xml, ~/file3.xml from the localhost server to the ~/out/ path")
+            application.start
+          end
+        end
       end
     end
-    
-      
   end
+  
 end

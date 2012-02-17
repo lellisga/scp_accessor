@@ -1,7 +1,8 @@
 Server_1:
   active: true
   server: localhost
-  user: user
+  user: root
+  password: 12345
   port: 22
   file_1: ~/file.xml
   file_2: ~/file2.xml
