@@ -8,7 +8,7 @@ Synopsis
         
 Install :
          
-        bundler instal
+        bundle install
         bin/scpAccessor
        
        
