@@ -30,7 +30,12 @@ module ScpAccessor
 
     def download_files(files, params)
       files.each do |file|
-        Net::SCP.download!(params["server"], params["user"], file, params["out_dir"], :password => params["password"])
+        begin
+          Net::SCP.download!(params["server"], params["user"], file, params["out_dir"], :password => params["password"])
+        rescue Net::SSH::AuthenticationFailed
+          @output.puts "There's an Authentication error, Please verify the username and password!"
+          break
+        end
       end
     end
     
