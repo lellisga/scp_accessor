@@ -35,6 +35,9 @@ module ScpAccessor
         rescue Net::SSH::AuthenticationFailed
           @output.puts "There's an Authentication error, Please verify the username and password!"
           break
+        rescue Errno::ECONNREFUSED
+          @output.puts "Server doesn't exist!. Verify the server"
+          break
         end
       end
     end
